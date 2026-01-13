@@ -1,0 +1,116 @@
+// Fonction pour ajouter un message manuellement
+function addNewMessage() {
+    const input = document.getElementById('user-input');
+    const box = document.getElementById('messages-box');
+    
+    if (input.value.trim() !== "") {
+        // Création de la bulle de message
+        const msgDiv = document.createElement('div');
+        msgDiv.className = 'message sent'; // Style pour vos messages
+        
+        // Contenu du message
+        msgDiv.innerHTML = `
+            <div class="msg-content">
+                <span class="user-name">Moi</span>
+                <p>${input.value}</p>
+                <span class="time">${new Date().getHours()}:${new Date().getMinutes()}</span>
+            </div>
+        `;
+        
+        box.appendChild(msgDiv);
+        input.value = ""; // Vide le champ
+        box.scrollTop = box.scrollHeight; // Scroll automatique vers le bas
+    }
+}
+
+// Permet d'envoyer avec la touche "Entrée"
+function checkEnter(event) {
+    if (event.key === "Enter") {
+        addNewMessage();
+    }
+}
+
+/* --- Discussion Page Specific Styles --- */
+.discussion-title {
+    font-size: 1.6em;
+    color: var(--dark-color);
+    margin: 0;
+    font-weight: 700;
+}
+
+.discussion-main-container {
+    display: flex;
+    gap: 30px;
+    padding: 40px 0;
+    min-height: calc(100vh - 200px); /* Ajuste la hauteur pour le pied de page */
+}
+
+.sidebar {
+    flex: 0 0 250px; /* Largeur fixe pour la sidebar */
+    background-color: white;
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    align-self: flex-start; /* Aligne la sidebar en haut */
+}
+
+.sidebar h4 {
+    font-size: 1.2em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.sidebar ul li {
+    padding: 8px 0;
+    color: var(--text-color);
+    font-size: 0.95em;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar ul li .fas.fa-circle {
+    font-size: 0.7em;
+    margin-right: 10px;
+}
+
+.sidebar ul li .online {
+    color: var(--secondary-color); /* Vert */
+}
+
+.sidebar ul li .offline {
+    color: #ced4da; /* Gris */
+}
+
+.chat-area {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+}
+
+.messages-box {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    max-width: 80%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border-radius: 20px; /* Bulles de discussion */
+    line-height: 1.4;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0

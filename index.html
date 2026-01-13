@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextStep : Votre Futur, Votre Innovation</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> </head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <a href="#" class="logo-link">
+                <img src="images/logo.png" alt="Logo NextStep" class="logo-img">
+            </a>
+            <nav class="nav-menu">
+                <a href="#hero">Accueil</a>
+                <a href="#about">Le Projet</a>
+                <a href="#features">Fonctionnalités</a>
+                <button class="btn-primary" onclick="document.getElementById('inscription-modal').style.display='block'">Rejoindre NextStep</button>
+            </nav>
+            <div class="hamburger" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section id="hero" class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1>NextStep : Révélez le potentiel entrepreneurial de la jeunesse africaine.</h1>
+                <p>Une plateforme dynamique conçue pour les étudiants et jeunes diplômés, transformant les idées en innovations concrètes et impactantes. Votre avenir commence maintenant.</p>
+                <button class="btn-secondary" onclick="document.getElementById('inscription-modal').style.display='block'">Découvrez Nos Opportunités</button>
+            </div>
+            <div class="hero-image">
+                <img src="images/hero_main.jpg" alt="Jeunes entrepreneurs africains travaillant ensemble" class="responsive-img">
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-text">
+                <h2>NextStep : Le catalyseur de l'ambition africaine.</h2>
+                <p>Dans un continent en pleine effervescence, la jeunesse africaine regorge de talents et d'idées novatrices. NextStep est bien plus qu'une plateforme ; c'est un écosystème conçu pour transformer cette énergie en projets réussis. Nous offrons un accès sans précédent à des ressources, des mentors et des opportunités de financement, en brisant les barrières traditionnelles et en créant un chemin clair vers le succès entrepreneurial. Nous croyons en la force de la collaboration et en l'impact positif que chaque jeune entrepreneur peut apporter à sa communauté et au-delà.</p>
+                <p>Notre mission est de doter les jeunes, comme vous, des outils nécessaires pour naviguer dans le monde complexe de l'entrepreneuriat, de la conception de l'idée initiale à la mise sur le marché. C'est un engagement envers l'innovation, la croissance et l'autonomisation, porté par la vision d'un avenir où chaque talent trouve sa place et son impac.</p>
+            </div>
+            <div class="about-image">
+                <img src="images/about_vision.jpg" alt="Vision d'innovation en Afrique" class="responsive-img">
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features-section">
+        <div class="container">
+            <h2>Nos Fonctionnalités Clés : Votre Parcours vers le Succès</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-comments icon-large"></i>
+                    <h3>Espaces de Discussion Collaboratifs</h3>
+                    <p>Connectez-vous avec vos pairs, partagez vos idées, recevez des feedbacks instantanés et construisez un réseau solide au sein de la communauté NextStep.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-lightbulb icon-large"></i>
+                    <h3>Accès à des Ressources Exclusives</h3>
+                    <p>Tutoriels, études de cas, guides pratiques et webinaires animés par des experts. Tout ce dont vous avez besoin pour apprendre et vous développer.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-handshake icon-large"></i>
+                    <h3>Opportunités de Mentoring</h3>
+                    <p>Soyez mis en relation avec des entrepreneurs expérimentés et des professionnels du secteur qui vous guideront à chaque étape de votre projet.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-rocket icon-large"></i>
+                    <h3>Vitrine de Projets & Financement</h3>
+                    <p>Présentez vos innovations à des investisseurs potentiels et accédez à des programmes d'accélération et des opportunités de financement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="call-to-action" class="cta-section">
+        <div class="container">
+            <h2>Prêt à Lancer Votre Aventure ?</h2>
+            <p>La communauté NextStep vous attend. Transformez vos ambitions en réalisations concrètes.</p>
+            <button class="btn-primary" onclick="document.getElementById('inscription-modal').style.display='block'">Rejoignez NextStep Maintenant</button>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 NextStep. Tous droits réservés. Une initiative pour la jeunesse africaine.</p>
+        </div>
+    </footer>
+
+    <div id="inscription-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="document.getElementById('inscription-modal').style.display='none'">&times;</span>
+            <h3>Rejoindre l'Écosystème NextStep</h3>
+            <p class="modal-subtitle">Inscrivez-vous pour accéder à un monde d'opportunités et de collaboration.</p>
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="email">Votre Email Institutionnel ou Professionnel</label>
+                    <input type="email" id="email" placeholder="exemple@univ.ci ou votre.entreprise.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Créez votre Mot de Passe</label>
+                    <input type="password" id="password" placeholder="Minimum 8 caractères" required>
+                </div>
+                <button type="submit" class="btn-primary-form">Valider et Explorer</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // JavaScript pour le menu hamburger (responsive)
+        function toggleMenu() {
+            const navMenu = document.querySelector('.nav-menu');
+            navMenu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
